@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var app = express();
 var ejs = require('ejs');
 var router = express.Router();
+var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 app.set('views', __dirname + '/views');
@@ -17,12 +18,12 @@ app.use(bodyParser.json());
 
 
 var port = process.env.PORT || 3000;
-var User = require('./model/user');
-var index = require('./routes/index')(router, User);
+// var User = require('./model/user');
+// var index = require('./routes/index')(router, User);
 var test = require('./routes/test')(router);
 
-app.use('/', test);
-app.use('/index', index);
+app.use('/test', test);
+// app.use('/index', index);
 
 var db = mongoose.connection;
 db.on('error', console.error);
