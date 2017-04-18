@@ -2,14 +2,15 @@ module.exports = function(app, fs)
 {
  
      app.get('/',function(req,res){
-         var sess = req.session;
+        //  var sess = req.session;
 
-         res.render('index',{
-             title : "My HomePage",
-             length : 5,
-             name : sess.name,
-             username : sess.username
-         })
+        //  res.render('index',{
+        //      title : "My HomePage",
+        //      length : 5,
+        //      name : sess.name,
+        //      username : sess.username
+        //  })
+        
      });
  
     app.get('/list', function (req, res) {
@@ -68,7 +69,7 @@ module.exports = function(app, fs)
         var result = {  };
         var username = req.params.username;
  
-        // CHECK REQ VALIDITY
+        
         // if(!req.body["password"] || !req.body["name"]){
         //     result["success"] = 0;
         //     result["error"] = "invalid request";
@@ -76,13 +77,13 @@ module.exports = function(app, fs)
         //     return;
         // }
  
-        // LOAD DATA
+      
         fs.readFile( __dirname + "/../data/user.json", 'utf8',  function(err, data){
             var users = JSON.parse(data);
-            // ADD/MODIFY DATA
+            
             users[username] = req.body;
  
-            // SAVE DATA
+            
             fs.writeFile(__dirname + "/../data/user.json",
                          JSON.stringify(users, null, '\t'), "utf8", function(err, data){
                 result = {"success": 1};
@@ -94,11 +95,11 @@ module.exports = function(app, fs)
  
     app.delete('/deleteUser/:username', function(req, res){
         var result = { };
-        //LOAD DATA
+        
         fs.readFile(__dirname + "/../data/user.json", "utf8", function(err, data){
             var users = JSON.parse(data);
  
-            // IF NOT FOUND
+            
             if(!users[req.params.username]){
                 result["success"] = 0;
                 result["error"] = "not found";
@@ -106,10 +107,10 @@ module.exports = function(app, fs)
                 return;
             }
  
-            // DELETE FROM DATA
+            
             delete users[req.params.username];
  
-            // SAVE FILE
+            
             fs.writeFile(__dirname + "/../data/user.json",
                          JSON.stringify(users, null, '\t'), "utf8", function(err, data){
                 result["success"] = 1;
@@ -163,6 +164,7 @@ module.exports = function(app, fs)
              res.redirect('/');
          }
      })
+
 
  
 }
