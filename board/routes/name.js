@@ -1,14 +1,5 @@
 module.exports = (router, User) => {
-
-// router.get('/', function(req,res){
-//     res.render('index', {
-//         title: "Park"
-//     });
-// })
-
-// router.post('/name', function(req,res){
-//     res.send('Name : ' + req.body.user_name + ' age: ' + req.body.user_age);
-    
+   
     
     router.get('/', function(req,res){
         res.render('index', {
