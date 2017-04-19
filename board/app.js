@@ -6,6 +6,8 @@ var ejs = require('ejs');
 var router = express.Router();
 var http = require('http');
 var mongoose = require('mongoose');
+var Iconv = require('iconv').Iconv
+var iconv = new Iconv('EUC-KR', 'UTF-8//TRANSLIT//IGNORE');
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connection;
@@ -25,6 +27,7 @@ app.use(bodyParser.json());
 
 var name = require('./routes/name')(router, User);
 var port = process.env.PORT || 3000;
+
 
 app.use('/', name);
 
