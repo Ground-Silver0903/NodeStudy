@@ -8,10 +8,10 @@
 <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <form action="/dbIn" method="POST">
-         <span>Input Your name: <input type="text" name = "user_name"> </span> <br> 
-         <span>Input Your age :  <input type="text" name = "user_age"> </span> <br>
-      <span>Input your school : <input type="text" name = "user_school"> </span> <br>
-      <span>Input your friend : <input type="text" name = "user_friend"> </span>
+         <span>Input Your name: <input type="text" name = "user_name" required> </span> <br> 
+         <span>Input Your age :  <input type="text" name = "user_age" required> </span> <br>
+      <span>Input your school : <input type="text" name = "user_school" required> </span> <br>
+      <span>Input your friend : <input type="text" name = "user_friend" required> </span>
        <button type="submit">submit</button>
     </form>
   </body>

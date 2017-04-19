@@ -8,18 +8,6 @@ var http = require('http');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
-
-var name = require('./routes/name')(router);
-var port = process.env.PORT || 3000;
-
-app.use('/', name);
-
-
 var db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
@@ -27,7 +15,20 @@ db.once('open', function(){
 });
 mongoose.connect('mongodb://localhost/info');
 
-var User = require('./models/data.js');
+var User = require('./models/data');
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
+var name = require('./routes/name')(router, User);
+var port = process.env.PORT || 3000;
+
+app.use('/', name);
+
+
  app.listen(port, function(){
     console.log('server on! on' + port);
 });

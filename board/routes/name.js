@@ -1,4 +1,4 @@
-module.exports = (router) => {
+module.exports = (router, User) => {
 
 // router.get('/', function(req,res){
 //     res.render('index', {
@@ -17,16 +17,21 @@ module.exports = (router) => {
     })
 
     router.post('/dbIn', function(req,res){
-        var user = new User();
-        user.name = req.body.name,
-        user.age = req.body.age,
-        user.school = req.body.school,
-        user.friend = req.body.friend;
+        var user = new User({
+            name : req.body.name,
+            age : req.body.age,
+            school : req.body.school,
+            friend : req.body.friend
+        }); 
 
         user.save(function(err){
-            if(err){
-                console.error('err');
-            }
+           if(err){
+                console.err(err);
+           }else{
+               res.end('Name : ' + req.body.name + '\n age : ' + req.body.age + 'school : ' + req.body.school + 'friend : ' + req.body.friend)
+           }
+           
+          
         });
     })
 return router;
