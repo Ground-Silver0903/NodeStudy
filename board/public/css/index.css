@@ -1,0 +1,27 @@
+#inputyourname {
+    font-size : 20px;
+    z-index: 2;
+    color: white;
+}
+#inputyourage{
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+}
+#inputyourschool{
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+}
+#inputyourfriend{
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+}
+
+.ui.inverted.segment{
+    width: 500px;  
+}
+#myform{
+    margin: auto;
+}

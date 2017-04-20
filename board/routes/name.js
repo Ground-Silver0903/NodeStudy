@@ -4,7 +4,7 @@ module.exports = (router, User) => {
         res.render('index', {
             title : "Park"
         });
-    })
+    });
 
     router.post('/dbIn', function(req,res){
         var user = new User({
@@ -18,11 +18,15 @@ module.exports = (router, User) => {
            if(err){
                 console.err(err);
            }else{
-               res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-               res.end('Name : ' + req.body.user_name + '\n age : ' + req.body.user_age + '\nschool : ' + req.body.user_school + '\nfriend : ' + req.body.user_friend)
+               res.redirect('/result');
+            //    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            //    res.end('Name : ' + req.body.user_name + '\n age : ' + req.body.user_age + '\nschool : ' + req.body.user_school + '\nfriend : ' + req.body.user_friend)
            }
           
         });
     })
 return router;
+
 }
+
+

@@ -2,25 +2,56 @@
 <html>
   <head>
     <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+  
 <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
+<script src="/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
     <title></title>
   </head>
   <body>
-<h1><%= title %></h1>
+ <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    
+    <!--<div id="backform">
     <form action="/dbIn" method="POST">
     <div class="ui input">
-         <span>Input Your name: <input type="text" name = "user_name" required> </span> <br> 
-         <span>Input Your age :  <input type="text" name = "user_age" required> </span> <br>
-      <span>Input your school : <input type="text" name = "user_school" required> </span> <br>
-      <span>Input your friend : <input type="text" name = "user_friend" required> </span>
+      <span id="inputyourname">Input Your name: </span><input type="text" name = "user_name" required > 
+      <span id="inputyourage">Input Your age : </span>  <input type="text" name = "user_age" required> 
+      <span id="inputyourschool">Input your school :</span> <input type="text" name = "user_school" required>  
+      <span id="inputyourfriend">Input your friend : </span> <input type="text" name = "user_friend" required> 
        </div>
        <button class = "ui secondary button" type="submit">submit</button>
+      </div>-->
+      <form action="/dbIn" method="POST" >
+      <div class = "ui inverted segment" id="myform">
+   <div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label id="inputyourname">Input Your Name</label>
+      <input type="text" name = "user_name" required >
+    </div>
+    <div class="field">
+      <label id="inputyourage">Input Your Age</label>
+      <input type="text" name = "user_age" required>
+    </div>
+  </div>
+  <div class="equal width fields">
+    <div class="field">
+      <label id="inputyourschool">Input Your School</label>
+     <input type="text" name = "user_school" required> 
+    </div>
+    <div class="field">
+      <label id="inputyourfriend">Input Your Friend</label>
+      <input type="text" name = "user_friend" required>
+    </div>
+    <button class = "ui secondary button" type="submit">submit</button>
+  </div>
+</div>
+</div>
     </form>
   </body>
 </html>
