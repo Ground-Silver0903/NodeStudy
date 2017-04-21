@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var app = express();
 var ejs = require('ejs');
 var router = express.Router();
@@ -26,12 +25,10 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
 var name = require('./routes/name')(router, User);
-var result = require('./routes/result')(router, User);
 var port = process.env.PORT || 3000;
 
 
 app.use('/', name);
-app.use('/result', result);
 
  app.listen(port, function(){
     console.log('server on! on' + port);

@@ -16,12 +16,12 @@ module.exports = (router, User) => {
 
         user.save(function(err){
            if(err){
-                console.err(err);
+                console.log('error!');
            }else{
-               res.redirect('/result');
-            //    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-            //    res.end('Name : ' + req.body.user_name + '\n age : ' + req.body.user_age + '\nschool : ' + req.body.user_school + '\nfriend : ' + req.body.user_friend)
-           }
+               res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+               res.end('Name : ' + req.body.user_name + '\n age : ' + req.body.user_age + '\nschool : ' + req.body.user_school + '\nfriend : ' + req.body.user_friend)
+           
+    }
           
         });
     })
