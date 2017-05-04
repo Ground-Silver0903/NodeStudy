@@ -11,6 +11,34 @@
     <title></title>
   </head>
   <body>
-    
-  </body>
+<!--    
+    <span>name! : <%= name %></span>
+    <span>age! : <%= age %></span>
+    <span>school! : <%= school %></span>
+    <span>friend! : <%= friend %></span>
+  </body>-->
+  <div class="ui cards">
+  <div class="card">
+    <div class="content">
+      
+      <div class="header">
+        <%= name %>
+      </div>
+      <div class="meta">
+        <%= age  %>
+      </div>
+      <div class="description">
+       school : <%= school %>
+       <br> 
+       friend : <%= friend %>
+      </div>
+    </div>
+    <div class="extra content">
+      <div class="ui two buttons">
+        <div class="ui basic green button">Approve</div>
+        <div class="ui basic red button">Decline</div>
+      </div>
+    </div>
+  </div>
+  </div>
 </html>
