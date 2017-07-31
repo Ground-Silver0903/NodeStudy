@@ -6,7 +6,8 @@ var userSchema  = new Schema({
     age : 'Number',
     school : 'String',
     friend : 'String'
-});
+})
+
 
 
 module.exports = mongoose.model('user',userSchema);

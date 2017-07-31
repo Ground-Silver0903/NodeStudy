@@ -27,7 +27,6 @@ app.use(bodyParser.json());
 var name = require('./routes/name')(router, User);
 var port = process.env.PORT || 3000;
 
-
 app.use('/', name);
 
  app.listen(port, function(){
